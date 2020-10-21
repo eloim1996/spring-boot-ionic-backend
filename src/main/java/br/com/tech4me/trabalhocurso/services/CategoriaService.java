@@ -11,6 +11,7 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import br.com.tech4me.trabalhocurso.domain.Categoria;
+import br.com.tech4me.trabalhocurso.dto.CategoriaDTO;
 import br.com.tech4me.trabalhocurso.repositories.CategoriaRepository;
 import br.com.tech4me.trabalhocurso.services.exception.DataIntegrityException;
 import br.com.tech4me.trabalhocurso.services.exception.ObjectNotFoundException;
@@ -61,5 +62,8 @@ public class CategoriaService {
 		
 	}
 	
+	public Categoria fromDTO(CategoriaDTO objDto) {
+		return new Categoria(objDto.getId(), objDto.getNome());
+	}
 	
 }
