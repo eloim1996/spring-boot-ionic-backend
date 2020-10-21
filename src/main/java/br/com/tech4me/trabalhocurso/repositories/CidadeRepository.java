@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import br.com.tech4me.trabalhocurso.domain.Cidade;
 
 @Repository
-@EnableJpaRepositories
 public interface CidadeRepository extends JpaRepository<Cidade, Integer> {
 
 }

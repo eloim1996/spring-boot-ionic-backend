@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import br.com.tech4me.trabalhocurso.domain.ItemPedido;
 
 @Repository
-@EnableJpaRepositories
 public interface ItemPedidoRepository extends JpaRepository<ItemPedido, Integer> {
 
 }

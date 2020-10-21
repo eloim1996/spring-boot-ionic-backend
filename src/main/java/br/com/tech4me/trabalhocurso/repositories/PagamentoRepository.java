@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import br.com.tech4me.trabalhocurso.domain.Pagamento;
 
 @Repository
-@EnableJpaRepositories
 public interface PagamentoRepository extends JpaRepository<Pagamento, Integer> {
 
 }

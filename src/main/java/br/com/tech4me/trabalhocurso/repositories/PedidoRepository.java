@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import br.com.tech4me.trabalhocurso.domain.Pedido;
 
 @Repository
-@EnableJpaRepositories
+
 public interface PedidoRepository extends JpaRepository<Pedido, Integer> {
 
 }
