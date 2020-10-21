@@ -3,11 +3,12 @@ package br.com.tech4me.trabalhocurso.services;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import br.com.tech4me.trabalhocurso.domain.Categoria;
-
 import br.com.tech4me.trabalhocurso.repositories.CategoriaRepository;
+import br.com.tech4me.trabalhocurso.services.exception.DataIntegrityException;
 import br.com.tech4me.trabalhocurso.services.exception.ObjectNotFoundException;
 
 
@@ -33,4 +34,15 @@ public class CategoriaService {
 		find(obj.getId());
 		return repo.save(obj);
 	}
+	
+	
+	public void delete(Integer id) {
+		find(id);
+		try {
+		repo.deleteById(id);
+		}
+		catch(DataIntegrityViolationException e) {
+			throw new DataIntegrityException("Não é possível excluir uma categoria que possui produtos");
+		}
+	} 
 }
