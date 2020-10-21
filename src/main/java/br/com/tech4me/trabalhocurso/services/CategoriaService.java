@@ -8,7 +8,8 @@ import org.springframework.stereotype.Service;
 import br.com.tech4me.trabalhocurso.domain.Categoria;
 
 import br.com.tech4me.trabalhocurso.repositories.CategoriaRepository;
-import javassist.tools.rmi.ObjectNotFoundException;
+import br.com.tech4me.trabalhocurso.services.exception.ObjectNotFoundException;
+
 
 @Service
 public class CategoriaService {
@@ -16,7 +17,7 @@ public class CategoriaService {
 	@Autowired
 	private CategoriaRepository repo;
 
-	public Categoria find(Integer id) throws ObjectNotFoundException {
+	public Categoria find(Integer id) {
 		 Optional<Categoria> obj = repo.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
 		 "Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));
@@ -28,4 +29,8 @@ public class CategoriaService {
 		
 	}
 	
+	public Categoria update (Categoria obj) {
+		find(obj.getId());
+		return repo.save(obj);
+	}
 }

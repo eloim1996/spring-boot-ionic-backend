@@ -8,7 +8,8 @@ import org.springframework.stereotype.Service;
 import br.com.tech4me.trabalhocurso.domain.Pedido;
 
 import br.com.tech4me.trabalhocurso.repositories.PedidoRepository;
-import javassist.tools.rmi.ObjectNotFoundException;
+import br.com.tech4me.trabalhocurso.services.exception.ObjectNotFoundException;
+
 
 @Service
 public class PedidoService {
