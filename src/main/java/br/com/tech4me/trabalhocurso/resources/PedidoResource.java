@@ -13,11 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import br.com.tech4me.trabalhocurso.domain.Categoria;
 import br.com.tech4me.trabalhocurso.domain.Pedido;
-import br.com.tech4me.trabalhocurso.dto.CategoriaDTO;
 import br.com.tech4me.trabalhocurso.services.PedidoService;
-import javassist.tools.rmi.ObjectNotFoundException;
 
 
 @RestController
