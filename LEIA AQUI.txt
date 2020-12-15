@@ -1,0 +1,52 @@
+Leandro Boa tarde.
+
+Eu tentei de tudo ate o Rafael me ajudou, mas eu não consegui subir minha aplicação no Docker.
+
+Eu usei o Mysql na porta 3306, um banco chamado tech4me.
+
+Pode criar o banco vazio com o nome tech4me que quando a aplicação subir vai criar todos os objetos ja.
+
+
+no application-dev.properties tem as configurações abaixo.
+
+spring.mail.host=smtp.gmail.com
+spring.mail.username=
+spring.mail.password=
+
+coloca um email válido do gmail e a senha do email que ele ao efetuar a compra manda um email para o email do cliente com o pedido feito. 
+
+no arquivo DBservices na linha 123 pode colocar um email seu pra testar.
+
+Testei do meu gmail pro meu hotmail e deu certo.
+
+Outra coisa, caso dê erro no Post do pedido, vai ter que ir no seu gmail e habilitar o envio de email do google por terceiros.
+
+Eu usei esse modelo de json para efetuar a venda.
+
+{
+ "cliente" : {"id" : 1},
+ "enderecoDeEntrega" : {"id" : 1},
+ "pagamento" : {
+ "numeroDeParcelas" : 10,
+ "@type": "pagamentoComCartao"
+ },
+ "itens" : [
+ {
+ "quantidade" : 2,
+ "produto" : {"id" : 3}
+ },
+ {
+ "quantidade" : 1,
+ "produto" : {"id" : 1}
+ }
+ ]
+}
+
+A requisição post para venda é http://localhost:8080/pedidos/ 
+
+
+
+ 
+
+
+
