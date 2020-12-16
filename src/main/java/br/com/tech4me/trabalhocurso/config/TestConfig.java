@@ -15,17 +15,17 @@ import br.com.tech4me.trabalhocurso.services.MockEmailService;
 @Profile("test")
 public class TestConfig {
 
-		@Autowired
-		private DBService dbService;
+	@Autowired
+	private DBService dbService;
 	
-		@Bean
-		public boolean instantiateDatabase() throws ParseException {
-			dbService.instantiateTesteDatabase();
-			return true;
-		}
-		
-		@Bean
-		public EmailService emailService() {
-			return new MockEmailService();
-		}
+	@Bean
+	public boolean instantiateDatabase() throws ParseException {
+		dbService.instantiateTestDatabase();
+		return true;
+	}
+	
+	@Bean
+	public EmailService emailService() {
+		return new MockEmailService();
+	}
 }

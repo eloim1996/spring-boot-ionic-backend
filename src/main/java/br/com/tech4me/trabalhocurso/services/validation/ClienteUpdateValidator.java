@@ -17,7 +17,7 @@ import br.com.tech4me.trabalhocurso.repositories.ClienteRepository;
 import br.com.tech4me.trabalhocurso.resources.exception.FieldMessage;
 
 public class ClienteUpdateValidator implements ConstraintValidator<ClienteUpdate, ClienteDTO> {
-	
+
 	@Autowired
 	private HttpServletRequest request;
 	
@@ -36,15 +36,13 @@ public class ClienteUpdateValidator implements ConstraintValidator<ClienteUpdate
 		Integer uriId = Integer.parseInt(map.get("id"));
 		
 		List<FieldMessage> list = new ArrayList<>();
-
-		//aqui eu vou lançar meus erros personalizados
 		
 		Cliente aux = repo.findByEmail(objDto.getEmail());
-		if(aux != null && !aux.getId().equals(uriId)) {
+		if (aux != null && !aux.getId().equals(uriId)) {
 			list.add(new FieldMessage("email", "Email já existente"));
 		}
-		
-		for (FieldMessage e : list) {//pego cada FieldMessage e retorno os erros personalizados na lista e de erros do spring 
+
+		for (FieldMessage e : list) {
 			context.disableDefaultConstraintViolation();
 			context.buildConstraintViolationWithTemplate(e.getMessage()).addPropertyNode(e.getFieldName())
 					.addConstraintViolation();
@@ -52,3 +50,4 @@ public class ClienteUpdateValidator implements ConstraintValidator<ClienteUpdate
 		return list.isEmpty();
 	}
 }
+
