@@ -2,7 +2,6 @@ package br.com.tech4me.trabalhocurso.security;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
