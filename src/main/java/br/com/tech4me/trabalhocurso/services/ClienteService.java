@@ -26,7 +26,6 @@ import br.com.tech4me.trabalhocurso.services.exception.AuthorizationException;
 import br.com.tech4me.trabalhocurso.services.exception.DataIntegrityException;
 import br.com.tech4me.trabalhocurso.services.exception.ObjectNotFoundException;
 
-
 @Service
 public class ClienteService {
 	
@@ -78,23 +77,6 @@ public class ClienteService {
 	public List<Cliente> findAll() {
 		return repo.findAll();
 	}
-
-    public Cliente findByEmail(String email){
-
-		UserSS user = UserService.authenticated();
-		if(user == null || !user.hasRole(Perfil.ADMIN) && !email.equals(user.getUsername())){
-			throw new AuthorizationException("Acesso NEgado");
-		}
-
-		Cliente obj = repo.findByEmail(email);
-		if(obj == null){
-			throw new ObjectNotFoundException("Objeto não encontrado! Id: " + user.getId()
-					+ ", Tipo: " + Cliente.class.getName());
-		}
-		return obj;
-	}
-
-
 	
 	public Page<Cliente> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {
 		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);

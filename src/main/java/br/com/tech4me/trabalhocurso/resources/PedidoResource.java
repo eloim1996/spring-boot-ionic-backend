@@ -50,3 +50,4 @@ public class PedidoResource {
 		return ResponseEntity.ok().body(list);
 	}
 }
+

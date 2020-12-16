@@ -11,8 +11,6 @@ import br.com.tech4me.trabalhocurso.repositories.ClienteRepository;
 import br.com.tech4me.trabalhocurso.services.EmailService;
 import br.com.tech4me.trabalhocurso.services.exception.ObjectNotFoundException;
 
-
-
 @Service
 public class AuthService {
 
@@ -62,4 +60,3 @@ public class AuthService {
 		}
 	}
 }
-

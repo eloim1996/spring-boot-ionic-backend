@@ -13,8 +13,6 @@ import br.com.tech4me.trabalhocurso.services.exception.AuthorizationException;
 import br.com.tech4me.trabalhocurso.services.exception.DataIntegrityException;
 import br.com.tech4me.trabalhocurso.services.exception.ObjectNotFoundException;
 
-
-
 @ControllerAdvice
 public class ResourceExceptionHandler {
 	

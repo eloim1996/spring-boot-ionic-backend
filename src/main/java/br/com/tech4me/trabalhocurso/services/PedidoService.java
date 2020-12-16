@@ -21,7 +21,6 @@ import br.com.tech4me.trabalhocurso.security.UserSS;
 import br.com.tech4me.trabalhocurso.services.exception.AuthorizationException;
 import br.com.tech4me.trabalhocurso.services.exception.ObjectNotFoundException;
 
-
 @Service
 public class PedidoService {
 	

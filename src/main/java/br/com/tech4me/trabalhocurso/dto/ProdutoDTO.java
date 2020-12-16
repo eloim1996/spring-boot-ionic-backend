@@ -44,3 +44,4 @@ public class ProdutoDTO implements Serializable {
 		this.preco = preco;
 	}
 }
+

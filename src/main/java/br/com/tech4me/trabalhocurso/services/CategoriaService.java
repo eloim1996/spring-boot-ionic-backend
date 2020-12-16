@@ -66,4 +66,3 @@ public class CategoriaService {
 		newObj.setNome(obj.getNome());
 	}
 }
-
